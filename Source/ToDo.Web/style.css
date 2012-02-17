@@ -49,7 +49,7 @@ h1 small { display:block; margin:0; font-size:13px; line-height:1.2em; text-tran
 .content .mainbar div.img { float:left;}
 .content .mainbar div.img img { padding:0 0 9px; background:url(images/img_shadow.png) no-repeat center bottom;}
 .content .mainbar img.fl { }
-.content .mainbar .article { margin:0 0 24px; padding:0;}
+.content .mainbar .article { margin:0 0 24px; padding:0; background-color:white;}
 .content .mainbar .post_content { float:right; width:450px;}
 .content .mainbar .post_content strong { color:#8a8a8a; font-weight:bold;}
 p.spec { padding:0 0 16px;}
@@ -72,7 +72,7 @@ p.infopost a.com:hover { color:#14a7fb; text-decoration:underline;}
 
 /* sidebar */
 .content .sidebar { margin:0; padding:0; float:left; width:260px;}
-.content .sidebar .gadget { margin:0 0 24px; padding:0;}
+.content .sidebar .gadget { margin:0 0 24px; padding:0; background-color:white;}
 .content .sidebar h2 { font-size:24px; background:#373737;}
 ul.sb_menu, ul.ex_menu { margin:0; padding:0; list-style:none; font-size:12px;}
 ul.sb_menu li, ul.ex_menu li { margin:0; list-style:none; border:1px solid #ebebeb; border-top:none;}
