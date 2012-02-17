@@ -1,0 +1,21 @@
+source/**/bin
+source/**/obj
+*.suo
+*.ldf
+*.LDF
+*.user
+*.fbl7
+*.fbpInf
+*.fb7lck
+*.userprefs
+*.pidb
+_ReSharper.*
+source/solutions/packages
+
+# OS generated files #
+######################
+*.DS_Store*
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
