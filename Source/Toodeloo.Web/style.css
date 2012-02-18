@@ -41,7 +41,7 @@ h1 small { display:block; margin:0; font-size:13px; line-height:1.2em; text-tran
 .menu_nav ul li.active a span, .menu_nav ul li a:hover span { }
 
 /* content */
-.content { padding:24px 0 0;}
+.content { padding:24px 0 0; height:600px; }
 .content_resize { margin:0 auto; padding:0 0 24px; width:960px; background:url(images/content_bg.jpg) repeat left top}
 .content h2 { }
 .content .mainbar { margin:0 0 24px; padding:0; float:right; width:670px;}
@@ -87,7 +87,7 @@ ul.sb_menu li a:hover, ul.ex_menu li a:hover { color:#14a7fb; font-weight:bold; 
 .content .mainbar .comment img.userpic { border:1px solid #dedede; margin:10px 16px 0 0; padding:0; float:left;}
 
 /* fbg */
-.fbg { background:#373738; border-top:6px solid #474b53; border-bottom:1px solid #272829;}
+.fbg { background:#373738; border-top:6px solid #474b53; border-bottom:1px solid #272829; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; width: 100%; }
 .fbg_resize { margin:0 auto; padding:40px 20px 24px; width:920px;}
 .fbg h2 { padding:0 0 16px; font-size:22px; color:#bebdbd;}
 .fbg h2 small { display:block; font-size:13px; font-weight:normal; text-transform:none;}
