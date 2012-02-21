@@ -99,7 +99,7 @@
     <Content Include="Content\images\submit.gif" />
     <Content Include="Content\images\ta-mark.png" />
     <Content Include="Content\images\userpic.gif" />
-    <Content Include="Content\styles\style.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -126,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
