@@ -126,3 +126,9 @@ ol li .send { margin:16px 0 0 0;}
 #formsearch span { display:block; margin:0; padding:0; float:left; background:url(images/search_bg.png) no-repeat left top;}
 #formsearch input.editbox_search { margin:0; padding:10px 10px; float:left; width:190px; height:16px; font-size:13px; line-height:16px; color:#aeaeae; background:none; border:none;}
 #formsearch input.button_search { margin:0; padding:0; border:none; float:left;}
+
+/* Input Boxes */
+.labelInput { display:block; margin: 0; padding: 0; float:left; background:url(images/input_background.png) no-repeat left top;}
+.labelInput input { margin:0; padding: 10px 10px; float: left; width:170px; height:16px; font-size:13px; line-height:16px; color:#aeaeae; background:none; border:none;}
+
+
