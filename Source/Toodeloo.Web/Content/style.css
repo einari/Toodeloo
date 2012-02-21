@@ -81,6 +81,7 @@ ul.ex_menu li { padding:10px 16px;}
 ul.sb_menu li a { margin-left:-16px; padding:8px 8px 8px 16px; font-size:13px; color:#8a8a8a; text-decoration:none; text-transform:uppercase;}
 ul.ex_menu li a { font-weight:normal; font-size:13px; color:#8a8a8a; text-decoration:none; text-transform:uppercase;}
 ul.sb_menu li a:hover, ul.ex_menu li a:hover { color:#14a7fb; font-weight:bold; text-decoration:none;}
+ul.sb_menu li div { display:inline-block;}
 
 /* subpages */
 .content .mainbar .comment { margin:0; padding:16px 0 0 0;}
@@ -128,7 +129,7 @@ ol li .send { margin:16px 0 0 0;}
 #formsearch input.button_search { margin:0; padding:0; border:none; float:left;}
 
 /* Input Boxes */
-.labelInput { display:block; margin: 0; padding: 0; float:left; background:url(images/input_background.png) no-repeat left top;}
-.labelInput input { margin:0; padding: 10px 10px; float: left; width:170px; height:16px; font-size:13px; line-height:16px; color:#aeaeae; background:none; border:none;}
+.labelInput { margin: 0; padding: 0; background:url(images/input_background.png) no-repeat left top;}
+.labelInput input { margin:0; padding: 10px 10px; width:170px; height:16px; font-size:13px; line-height:16px; color:#aeaeae; background:none; border:none;}
 
 
