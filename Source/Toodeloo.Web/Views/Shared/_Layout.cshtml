@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>header</title>
+    <link href="@Url.Content("~/Content/styles/style.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+	<div data-feature="layout/header">
+        @Html.Partial("_Header")
+    </div>
+
+    <div class="content">
+        <div class="content_resize">
+        @RenderBody()
+            <div class="clr"></div>
+        </div>
+    </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="clr"></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+

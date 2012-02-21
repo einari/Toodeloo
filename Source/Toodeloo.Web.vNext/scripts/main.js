@@ -34,8 +34,8 @@ require(
 				                "cufon-libsans-r-b",
 								],
 		                        function() {
-									Cufon.replace('h2, h3, h4, h5, h6', { hover: true });
-									Cufon.replace('h1', { color: '-linear-gradient(#3f3f3f, #262626)', hover: false});
+									//Cufon.replace('h2, h3, h4, h5, h6', { hover: true });
+									//Cufon.replace('h1', { color: '-linear-gradient(#3f3f3f, #262626)', hover: false});
 		                        }
 		                );
 		            }
