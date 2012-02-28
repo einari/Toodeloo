@@ -41,7 +41,7 @@
 					<input maxlength="80" data-bind="value:itemToCreate.title, valueUpdate: 'afterkeydown'" type="text" />
 				</div>
 			</li>
-			<li data-bind="fadeInOrOut: itemToCreate.title.validator.isValid()" style="background-color:#14A7FB; color:white; font:normal 13px/1.5em 'Liberation sans', Arial, Helvetica, sans-serif;">
+			<li data-bind="visible: itemToCreate.title.validator.isValid" style="background-color:#14A7FB; color:white; font:normal 13px/1.5em 'Liberation sans', Arial, Helvetica, sans-serif;">
 				<a href="#" data-bind="click:addItem" style="color:white;" >Save</a>
 			</li>
 		    </ul>

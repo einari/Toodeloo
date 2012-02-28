@@ -5,7 +5,17 @@
     Bifrost.features.featureManager.get("content/index").defineViewModel(function () {
 		function Item(title) {
 			var self = this;
-			this.title = ko.observable(title).extend({validation: {required: {message:"Title is required"}}});
+			this.title = ko.observable(title).extend({
+				validation: {
+					required: {
+						message:"Title is required"
+					},
+					minLength: {
+						length: 5,
+						message:"Must 5 or more"
+					}
+				}
+			});
 			this.title.validator.validate(title);
 			
 			this.clone = function() {

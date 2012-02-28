@@ -20,6 +20,9 @@ Global
 		{B38FF8EC-DA0D-4C27-AE6D-F1F1AEB272F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B38FF8EC-DA0D-4C27-AE6D-F1F1AEB272F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ..\Toodeloo.Web\Toodeloo.Web.csproj
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
