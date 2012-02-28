@@ -117,6 +117,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Content\scripts\index.js" />
+    <Content Include="Content\scripts\jquery-1.7.1.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

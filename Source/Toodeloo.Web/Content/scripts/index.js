@@ -32,9 +32,8 @@
                                   .append(
                                     $("<img/>").attr("src", "/Content/images/delete.png")
                                   );
-        return $("<li/>").text(task).append(deleteTask);
+		var item = $("<span/>").text(task)
+        return $("<li/>").append(deleteTask).append(item);
     }
-
-
 });
 
