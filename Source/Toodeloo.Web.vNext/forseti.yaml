@@ -3,4 +3,4 @@ Harnesses:
   - Harness:
       Name						: Something
       SystemsSearchPath 		: demo/{system}.js
-      DescriptionsSearchPath	: demo/for_{system}/{description}.js
+      DescriptionsSearchPath	: demo.specs/for_{system}/{description}.js

@@ -1,4 +1,4 @@
-(function() {
+
 	function Employee(firstName, lastName) {
 		var self = this;
 		
@@ -29,4 +29,3 @@
 	$(function() {
 		ko.applyBindings(new ViewModel());
 	})
-})();
