@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="../scripts/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../scripts/knockout-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../scripts/knockout.plugins.js" type="text/javascript" charset="utf-8"></script>
+	<script src="index.js" type="text/javascript" charset="utf-8"></script>
+	<title>index</title>
+	
+</head>
+
+<body>
+	<div>
+		<div>
+			<span>FirstName</span>
+			<input data-bind="value:currentEmployee.firstName, valueUpdate:'afterkeydown'" type="text"></input>
+		</div>
+		<div>
+			<span>LastName</span>
+			<input data-bind="value:currentEmployee.lastName" type="text"></input>
+		</div>
+		<div>
+			<span>Fullname</span>
+			<span data-bind="text:currentEmployee.fullName"></span>
+		</div>
+		<a href="#" data-bind="click:add">Add</a>
+	</div>
+	
+	<ul data-bind="foreach:employees">
+		<li data-bind="text: fullName, fadeInElement: $data">
+		</li>
+	</ul>
+</body>
+</html>
