@@ -1,11 +1,6 @@
-﻿@*@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@section Scripts{
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/index.js")"></script>
 }
-
-
-This is the Home page! :)   *@
-
-
 
     <div class="mainbar">
         <div class="article">
@@ -13,10 +8,8 @@ This is the Home page! :)   *@
 			    <span>Items</span>
 		    </h2>
 
-            <ul class="sb_menu">
-			    <li>Item number 1</li>
-			    <li>Item number 2</li>
-			    <li>Item number 3</li>
+            <ul class="sb_menu todo-list">
+                <li class="empty">Empty</li>
 		    </ul>
             <div class="clr"></div>
         </div>
