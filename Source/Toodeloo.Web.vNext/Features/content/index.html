@@ -10,16 +10,41 @@
 			    <span>Items</span>
 		    </h2>
 
-            <ul class="sb_menu">
-			    <li>Item number 1</li>
-			    <li>Item number 2</li>
-			    <li>Item number 3</li>
+            <ul class="sb_menu" data-bind="foreach: items">
+				<li data-bind="fadeInElement: $data">
+					<img data-bind="click: $parent.deleteItem.bind($data)" src="/images/delete.png"></img>
+					<span data-bind="text:title"></span>
+				</li>
 		    </ul>
+			<div data-bind="visible: items().length == 0">
+				<span>&nbsp;EMPTY</span>
+			</div>
+			<div data-bind="visible: items().length > 0">
+				<span>&nbsp;Total : 
+					<span data-bind="text: items().length"></span>
+				</span>
+			</div>
             <div class="clr"></div>
         </div>
     </div>
     <div class="sidebar">
-        <div class="gadget" data-feature="sidebar/create">
+        <div class="gadget">
+		    <h2 class="star"><span>Create new</span></h2><div class="clr"></div>
+		    <ul class="sb_menu">
+		    <li class="label">
+				<div>Title</div>
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				<div class="labelInput">
+					<input maxlength="80" data-bind="value:itemToCreate.title, valueUpdate: 'afterkeydown'" type="text" />
+				</div>
+			</li>
+			<li data-bind="fadeInOrOut: itemToCreate.title.validator.isValid()" style="background-color:#14A7FB; color:white; font:normal 13px/1.5em 'Liberation sans', Arial, Helvetica, sans-serif;">
+				<a href="#" data-bind="click:addItem" style="color:white;" >Save</a>
+			</li>
+		    </ul>
         </div>
     </div>
 </body>
