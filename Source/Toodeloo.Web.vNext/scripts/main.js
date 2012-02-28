@@ -21,7 +21,7 @@ require(
 	function() {
 		require(["jquery.history"],
 		    function () {
-		        require(["knockout.mapping", "bifrost"],
+		        require(["knockout.mapping", "bifrost", "knockout.plugins"],
 		            function () {
 		                Bifrost.features.uriMapper.add("admin/{feature}/{subFeature}", "/administration/{feature}/{subFeature}", false);
 		                Bifrost.features.uriMapper.add("admin/{feature}", "/administration/{feature}", true);
