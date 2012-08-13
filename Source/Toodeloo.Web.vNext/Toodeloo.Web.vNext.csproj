@@ -169,6 +169,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="scripts\knockout.plugins.js" />
+    <Content Include="images\delete.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
