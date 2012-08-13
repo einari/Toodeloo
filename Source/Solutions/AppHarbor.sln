@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toodeloo.Web.vNext", "..\Toodeloo.Web.vNext\Toodeloo.Web.vNext.csproj", "{4E726015-DD74-4CDB-8C39-2E2A5D9D282F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E726015-DD74-4CDB-8C39-2E2A5D9D282F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E726015-DD74-4CDB-8C39-2E2A5D9D282F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E726015-DD74-4CDB-8C39-2E2A5D9D282F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E726015-DD74-4CDB-8C39-2E2A5D9D282F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ..\Toodeloo.Web.vNext\Toodeloo.Web.vNext.csproj
+	EndGlobalSection
+EndGlobal
