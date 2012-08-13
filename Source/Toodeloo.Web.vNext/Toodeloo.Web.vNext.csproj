@@ -58,14 +58,8 @@
     <Reference Include="Bifrost.Web">
       <HintPath>..\Libraries\Bifrost\Bifrost.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Bifrost.Web.Mvc">
-      <HintPath>..\Libraries\Bifrost\Bifrost.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="FluentValidation">
       <HintPath>..\Solutions\packages\FluentValidation.3.3.1.0\lib\Net40\FluentValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentValidation.Mvc">
-      <HintPath>..\Solutions\packages\FluentValidation.MVC3.3.3.1.0\lib\Net40\FluentValidation.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -94,7 +88,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivator">
@@ -105,6 +98,7 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\Solutions\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

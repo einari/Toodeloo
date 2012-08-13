@@ -4,7 +4,7 @@ using Bifrost.Configuration;
 using Bifrost.Execution;
 using Bifrost.Ninject;
 using Bifrost.Services.Execution;
-using Bifrost.Web.Mvc;
+using Bifrost.Web;
 using Ninject;
 
 namespace Toodeloo.Web.vNext
@@ -20,8 +20,8 @@ namespace Toodeloo.Web.vNext
 
         public override void OnConfigure(IConfigure configure)
         {
-			var connectionString = ConfigurationManager.AppSettings["MONGOLAB_URI"];
-			var database = ConfigurationManager.AppSettings["MONGOLAB_DB"];
+			var connectionString = ConfigurationManager.AppSettings["MONGOHQ_URL"];
+			var database = ConfigurationManager.AppSettings["MONGO_DB"];
 
             configure
                 .UsingConfigConfigurationSource()
