@@ -40,9 +40,11 @@
 				<div class="labelInput">
 					<input maxlength="80" placeholder="Enter task" data-bind="value:itemToCreate.title, valueUpdate: 'afterkeydown'" type="text" />
 				</div>
+                <span data-bind="validationMessageFor:itemToCreate.title"></span>
 			</li>
 			<li data-bind="visible: itemToCreate.title.validator.isValid" style="background-color:#14A7FB; color:white; font:normal 13px/1.5em 'Liberation sans', Arial, Helvetica, sans-serif;">
 				<a href="#" data-bind="click:addItem" style="color:white;" >Save</a>
+                
 			</li>
 		    </ul>
         </div>
