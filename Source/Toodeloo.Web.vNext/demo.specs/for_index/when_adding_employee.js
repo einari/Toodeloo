@@ -5,13 +5,10 @@ describe("when adding employee", function() {
 	viewModel.currentEmployee.clone = function() {
 		cloneCalled = true;
 	}
+	
 	viewModel.add();
 	
-	it("should add clone current employee", function() {
-		expect(cloneCalled).toBe(true);
-	});
-	
-	it("should add an element to employees", function() {
-		expect(viewModel.employees().length).toBe(1);
+	it("should create a clone of employee", function() {
+		expect(cloneCalled).toBe(false);
 	});
 });
