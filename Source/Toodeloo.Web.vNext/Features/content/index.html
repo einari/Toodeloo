@@ -16,7 +16,10 @@
 					<span data-bind="text:title"></span>
 				</li>
 		    </ul>
-			<div data-bind="visible: items().length == 0">
+		    <div data-bind="visible: isBusy">
+		    	<img src="/images/spinner.gif"></img>
+		    </div>
+			<div data-bind="visible: items().length == 0 && !isBusy()">
 				<span>&nbsp;EMPTY</span>
 			</div>
 			<div data-bind="visible: items().length > 0">

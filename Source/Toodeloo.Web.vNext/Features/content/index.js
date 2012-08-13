@@ -28,6 +28,7 @@
 		this.itemToCreate = new Item("");
 				
 		this.items = ko.observableArray();
+		this.isBusy = ko.observable(true);
 
 		$.ajax({
 		    url: "/ToDoItem/GetAll",
@@ -43,6 +44,7 @@
 		        });
 		        self.items(ko.toJS(result));
 		        Bifrost.messaging.messenger.publish(new itemCountSet(self.items().length));
+		        self.isBusy(false);
 		    }
 		});
 		
