@@ -1,4 +1,5 @@
-﻿using System.Web.Routing;
+﻿using System.Configuration;
+using System.Web.Routing;
 using Bifrost.Configuration;
 using Bifrost.Execution;
 using Bifrost.Ninject;
@@ -19,11 +20,14 @@ namespace Toodeloo.Web.vNext
 
         public override void OnConfigure(IConfigure configure)
         {
+			var connectionString = ConfigurationManager.AppSettings["MONGOLAB_URI"];
+			var database = ConfigurationManager.AppSettings["MONGOLAB_DB"];
+
             configure
                 .UsingConfigConfigurationSource()
                 .Sagas.WithoutLibrarian()
                 .Serialization.UsingJson()
-                .UsingMongoDb("mongodb://10.0.1.49","Toodeloo")
+                .UsingMongoDb(connectionString, database)
                 .AsSinglePageApplication();
             base.OnConfigure(configure);
         }
