@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <input maxlength="80" data-bind="value:title, valueUpdate: 'afterkeydown'" type="text" />
+        <button data-bind="enable: title.validator.isValid, click: addItem">Add</button>
+        <br />
+        <span data-bind="validationMessageFor:title"></span>
+    </body>
+</html>

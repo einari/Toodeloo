@@ -1,0 +1,13 @@
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bin\Debug\resources.pri
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bin\Debug\AppxManifest.xml
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bin\Debug\Toodeloo.WinRT.build.appxrecipe
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\priconfig.xml.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\layout.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\resources.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\pri.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\priconfig.xml
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\layout.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\resources.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\pri.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\LanguageQualifiers.txt
+C:\Projects\Toodeloo\Source\Toodeloo.WinRT\bld\Debug\ProjectArchitectures.txt

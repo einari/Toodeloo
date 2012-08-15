@@ -1,0 +1,35 @@
+﻿body {
+    margin-left: 39px;
+    margin-top: 59px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:left;
+    padding-left: 140px;
+    width: 300px;
+}
+    .right button {
+        float:right;
+    }
+
+ul { list-style-type: none; }
+li {
+    height: 40px;
+}
+
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

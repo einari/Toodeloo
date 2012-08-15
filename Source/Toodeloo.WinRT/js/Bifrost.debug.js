@@ -1,4 +1,4 @@
-var Bifrost = Bifrost || {};
+﻿var Bifrost = Bifrost || {};
 (function(global, undefined) {
 	Bifrost.extend = function extend(destination, source) {
     	return $.extend(destination, source);
@@ -286,7 +286,7 @@ Bifrost.Uri = (function(window, undefined) {
 		},
 	};
 })(window);
-﻿Bifrost.namespace("Bifrost.validation");
+Bifrost.namespace("Bifrost.validation");
 Bifrost.Exception.define("Bifrost.validation.OptionsNotDefined", "Option was undefined");
 Bifrost.Exception.define("Bifrost.validation.NotANumber", "Value is not a number");
 Bifrost.Exception.define("Bifrost.validation.ValueNotSpecified","Value is not specified");
@@ -295,8 +295,7 @@ Bifrost.Exception.define("Bifrost.validation.MaxNotSpecified","Max is not specif
 Bifrost.Exception.define("Bifrost.validation.MinLengthNotSpecified","Min length is not specified");
 Bifrost.Exception.define("Bifrost.validation.MaxLengthNotSpecified","Max length is not specified");
 Bifrost.Exception.define("Bifrost.validation.MissingExpression","Expression is not specified");
-
-﻿Bifrost.namespace("Bifrost.validation");
+Bifrost.namespace("Bifrost.validation");
 Bifrost.validation.ruleHandlers = (function () {
     return Bifrost.validation.ruleHandlers || { };
 })();

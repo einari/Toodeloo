@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        
+        <ul data-bind="foreach: items">
+			<li data-bind="fadeInElement: $data">
+				<span data-bind="text:title"></span>
+                <button data-bind="click: $parent.deleteItem.bind($data)" >Delete</button>
+			</li>
+		</ul>
+		<ul data-bind="visible: items().length == 0">
+			<li>EMPTY</li>
+		</ul>
+    </body>
+</html>
