@@ -4,7 +4,6 @@
             viewModel: function () {
                 var self = this;
 
-
                 this.title = ko.observable("").extend({
                     validation: {
                         required: {
@@ -16,12 +15,15 @@
                         }
                     }
                 });
-                this.title.validator.validate("");
 
                 this.addItem = function () {
                     service.addItem(self.title());
                     $.publish("itemAdded", [self.title()]);
                     self.title("");
+                }
+
+                if (this.title.validator) {
+                    this.title.validator.validate("");
                 }
 
                 return this;
@@ -33,5 +35,3 @@
 require(["toDoService"], function (service) {
     Bifrost.features.featureManager.get("content/sidebar").defineViewModel(Toodeloo.Features.content.Sidebar(service).viewModel);
 });
-
-

@@ -10,7 +10,6 @@
                     $.publish("itemCount", [self.items().length]);
                 });
 
-
                 $.subscribe("itemAdded", function (title) {
                     self.items.push({ title: title });
                 });
