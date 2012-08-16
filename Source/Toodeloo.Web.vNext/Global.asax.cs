@@ -20,7 +20,6 @@ namespace Toodeloo.Web.vNext
 
         public override void OnConfigure(IConfigure configure)
         {
-
 			var connectionString = ConfigurationManager.AppSettings["MONGOHQ_URL"];
 			var database = ConfigurationManager.AppSettings["MONGO_DB"];
 
