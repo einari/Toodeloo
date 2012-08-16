@@ -35,11 +35,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Features\content\for_index\when_item_count_is_published.js" />
     <Content Include="Features\content\for_list\when_creating_an_instance.js" />
     <Content Include="Features\content\for_list\when_deleting_item.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\content\for_sidebar\" />
+    <Content Include="Features\content\for_list\when_item_added_is_published.js" />
+    <Content Include="Features\content\for_list\when_item_count_changes.js" />
+    <Content Include="Features\content\for_sidebar\when_adding_item.js" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>215f9529-d835-4fb0-a73e-962fbab5411d</ProjectGuid>
