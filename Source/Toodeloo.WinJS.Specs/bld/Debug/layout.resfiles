@@ -1,0 +1,6 @@
+Features\content\for_index\when_item_count_is_published.js
+Features\content\for_list\when_creating_an_instance.js
+Features\content\for_list\when_deleting_item.js
+Features\content\for_list\when_item_added_is_published.js
+Features\content\for_list\when_item_count_changes.js
+Features\content\for_sidebar\when_adding_item.js

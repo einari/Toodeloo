@@ -41,6 +41,12 @@
     <Content Include="Features\content\for_list\when_item_added_is_published.js" />
     <Content Include="Features\content\for_list\when_item_count_changes.js" />
     <Content Include="Features\content\for_sidebar\when_adding_item.js" />
+    <None Include="Toodeloo.WinJS.Specs_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>215f9529-d835-4fb0-a73e-962fbab5411d</ProjectGuid>
@@ -52,7 +58,8 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>Toodeloo.WinRT.Specs_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Toodeloo.WinJS.Specs_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>C50DA45380192760C534B953030F2D6A233EFC11</PackageCertificateThumbprint>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

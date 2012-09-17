@@ -1,0 +1,13 @@
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bin\Debug\resources.pri
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bin\Debug\AppxManifest.xml
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bin\Debug\Toodeloo.WinJS.Specs.build.appxrecipe
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\priconfig.xml.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\layout.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\resources.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\pri.resfiles.intermediate
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\priconfig.xml
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\layout.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\resources.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\pri.resfiles
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\LanguageQualifiers.txt
+C:\Projects\Toodeloo\Source\Toodeloo.WinJS.Specs\bld\Debug\ProjectArchitectures.txt
