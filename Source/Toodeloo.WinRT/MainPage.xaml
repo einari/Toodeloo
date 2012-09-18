@@ -5,9 +5,30 @@
     xmlns:local="using:Toodeloo.WinRT"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xaml="using:WinRTXamlToolkit.Controls.Extensions"
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <local:Test x:Name="test"/>
+        </Grid.Resources>        
 
+        <Grid DataContext="{StaticResource test}" Margin="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="FirstName" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding FirstName, Mode=TwoWay}" />
+            <TextBlock Text="LastName" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=LastName, Mode=TwoWay}"/>
+        </Grid>
+        
     </Grid>
 </Page>

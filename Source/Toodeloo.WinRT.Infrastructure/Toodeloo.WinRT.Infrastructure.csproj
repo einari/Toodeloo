@@ -4,20 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{427E9313-5C3E-4855-A090-3B9487970A91}</ProjectGuid>
-    <OutputType>AppContainerExe</OutputType>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{284D983E-4F91-4525-9B52-21C37373EA73}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Toodeloo.WinRT</RootNamespace>
-    <AssemblyName>Toodeloo.WinRT</AssemblyName>
+    <RootNamespace>Toodeloo.WinRT.Infrastructure</RootNamespace>
+    <AssemblyName>Toodeloo.WinRT.Infrastructure</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Toodeloo.WinRT_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solutions\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,7 +25,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -102,70 +99,46 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Execution\Activation\ActivationManager.cs" />
+    <Compile Include="Execution\Activation\ActivationStrategyConstructorMissing.cs" />
+    <Compile Include="Execution\Activation\ComplexStrategy.cs" />
+    <Compile Include="Execution\Activation\ConstantStrategy.cs" />
+    <Compile Include="Execution\Activation\DefaultStrategy.cs" />
+    <Compile Include="Execution\Activation\IActivationManager.cs" />
+    <Compile Include="Execution\Activation\IScope.cs" />
+    <Compile Include="Execution\Activation\IStrategy.cs" />
+    <Compile Include="Execution\Activation\IStrategyActivator.cs" />
+    <Compile Include="Execution\Activation\MissingTargetTypeException.cs" />
+    <Compile Include="Execution\Activation\SingletonScope.cs" />
+    <Compile Include="Execution\Activation\StrategyActivator.cs" />
+    <Compile Include="Execution\Activation\UnableToActivateException.cs" />
+    <Compile Include="Execution\AssemblyLocator.cs" />
+    <Compile Include="Execution\Binding\BindingDiscoverer.cs" />
+    <Compile Include="Execution\Binding\BindingManager.cs" />
+    <Compile Include="Execution\Binding\DefaultBindingConvention.cs" />
+    <Compile Include="Execution\Binding\IBinding.cs" />
+    <Compile Include="Execution\Binding\IBindingConvention.cs" />
+    <Compile Include="Execution\Binding\IBindingDiscoverer.cs" />
+    <Compile Include="Execution\Binding\IBindingManager.cs" />
+    <Compile Include="Execution\Binding\SelfBindingConvention.cs" />
+    <Compile Include="Execution\Binding\StandardBinding.cs" />
+    <Compile Include="Execution\Container.cs" />
+    <Compile Include="Execution\ContainerContext.cs" />
+    <Compile Include="Execution\IAssemblyLocator.cs" />
+    <Compile Include="Execution\IContainer.cs" />
+    <Compile Include="Execution\In.cs" />
+    <Compile Include="Execution\ITypeDiscoverer.cs" />
+    <Compile Include="Execution\SingletonAttribute.cs" />
+    <Compile Include="Execution\TypeDiscoverer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
-    <None Include="packages.config" />
-    <None Include="Toodeloo.WinRT_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\Logo.png" />
-    <Content Include="Assets\SmallLogo.png" />
-    <Content Include="Assets\SplashScreen.png" />
-    <Content Include="Assets\StoreLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="Common\StandardStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight.Extras.Win8">
-      <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\GalaSoft.MvvmLight.Extras.Win8.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Win8">
-      <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\GalaSoft.MvvmLight.Win8.dll</HintPath>
-    </Reference>
-    <Reference Include="MicroSliver.Metro">
-      <HintPath>..\Solutions\packages\MicroSliver.2.1.6.0\lib\winrt45\MicroSliver.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="WinRTXamlToolkit">
-      <HintPath>..\Solutions\packages\winrtxamltoolkit.1.2.2\lib\winrt45\WinRTXamlToolkit.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Toodeloo.WinRT.Infrastructure\Toodeloo.WinRT.Infrastructure.csproj">
-      <Project>{284d983e-4f91-4525-9b52-21c37373ea73}</Project>
-      <Name>Toodeloo.WinRT.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
