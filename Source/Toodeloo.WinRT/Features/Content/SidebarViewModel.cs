@@ -23,8 +23,11 @@ namespace Toodeloo.WinRT.Features.Content
 
         void Add(string title)
         {
-            _toDoService.AddItem(title);
-            _messenger.Send(new ItemAdded { Title = title });
+            if (!string.IsNullOrEmpty(title))
+            {
+                _toDoService.AddItem(title);
+                _messenger.Send(new ItemAdded { Title = title });
+            }
         }
     }
 }

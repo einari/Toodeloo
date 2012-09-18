@@ -5,13 +5,19 @@
     xmlns:local="using:Toodeloo.WinRT.Features.Content"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkitExtensions="using:WinRTXamlToolkit.Controls.Extensions"
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Sidebar}"
     >
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Horizontal">
-            <TextBox x:Name="TitleTextBox" Width="200" />
+            <TextBox x:Name="TitleTextBox" 
+                     Width="200" 
+                     toolkitExtensions:TextBoxValidationExtensions.Format="NonEmpty" 
+                     toolkitExtensions:TextBoxValidationExtensions.InvalidBrush="Red"
+                     toolkitExtensions:TextBoxValidationExtensions.ValidBrush="Green"
+                     />
             <Button 
                 Width="80"
                 Command="{Binding AddCommand}" 

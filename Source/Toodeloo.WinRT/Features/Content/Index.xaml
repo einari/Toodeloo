@@ -8,13 +8,23 @@
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Index}"
     >
-
-
+    <Page.Resources>
+        <Style x:Key="ApplicationHeader" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="FontSize" Value="60"/>
+        </Style>
+        <Style x:Key="FeatureHeader" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+    </Page.Resources>
+    
+        
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
 
         <StackPanel Orientation="Vertical" Margin="39,59,39,59">
             <Grid>
-                <TextBlock>
+                <TextBlock Style="{StaticResource ApplicationHeader}">
                 <Run Text="Toodeloo WinRT (" />
                 <Run Text="{Binding Count}"/>
                 <Run Text=")"/>
@@ -31,17 +41,15 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                    <TextBlock Text="Create new"/>
+                    <TextBlock Text="Create new" Style="{StaticResource FeatureHeader}"/>
                     <local:Sidebar />
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                    <TextBlock Text="List of items"/>
+                    <TextBlock Text="List of items" Style="{StaticResource FeatureHeader}"/>
                     <local:List />
                 </StackPanel>
             </Grid>
         </StackPanel>
     </Grid>
-    
-    
 </Page>
