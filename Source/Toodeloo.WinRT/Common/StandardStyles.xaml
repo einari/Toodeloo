@@ -424,6 +424,12 @@
         <Setter Property="Content" Value="&#xE106;"/>
     </Style>
 
+    <Style x:Key="ReshareAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="ReshareAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Reshare"/>
+        <Setter Property="Content" Value="&#xE1CA;"/>
+    </Style>
+
     <!--
     
     <Style x:Key="SkipBackAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">

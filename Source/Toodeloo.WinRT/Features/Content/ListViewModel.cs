@@ -21,19 +21,22 @@ namespace Toodeloo.WinRT.Features.Content
         ISearchService _searchService;
         IMessenger _messenger;
         IDispatcher _dispatcher;
+        ISharingService _sharingService;
         ToDoItem _selectedItem;
 
         public ListViewModel(
             IToDoService toDoService, 
             IMessenger messenger, 
             IDispatcher dispatcher,
-            ISearchService searchService
+            ISearchService searchService,
+            ISharingService sharingService
             )
         {
             _toDoService = toDoService;
             _searchService = searchService;
             _dispatcher = dispatcher;
             _messenger = messenger;
+            _sharingService = sharingService;
 
             Items = new ObservableCollection<ToDoItem>();
             SearchResult = new ObservableCollection<ToDoItem>();
@@ -55,6 +58,7 @@ namespace Toodeloo.WinRT.Features.Content
             RefreshCommand = DelegateCommand.Create(Refresh);
             DeleteCommand = DelegateCommand.Create(Delete);
             ClearSearchCommand = DelegateCommand.Create(ClearSearch);
+            ShareCommand = DelegateCommand.Create(Share);
         }
 
         private void RegisterSubscriptions()
@@ -77,12 +81,12 @@ namespace Toodeloo.WinRT.Features.Content
         }
         
         public string SearchQuery { get; set; }
-
         public int Count { get; set; }
 
         public ICommand RefreshCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand ClearSearchCommand { get; private set; }
+        public ICommand ShareCommand { get; private set; }
 
         async void PopulateItems()
         {
@@ -125,6 +129,11 @@ namespace Toodeloo.WinRT.Features.Content
         {
             SearchQuery = string.Empty;
             SearchResult.Clear();
+        }
+
+        void Share()
+        {
+            _sharingService.ShareSelectedItem();
         }
     }
 }

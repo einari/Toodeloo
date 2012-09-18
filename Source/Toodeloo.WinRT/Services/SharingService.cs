@@ -1,9 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Messages;
 using Windows.ApplicationModel.DataTransfer;
 
 namespace Toodeloo.WinRT.Services
 {
+    [Singleton]
     public class SharingService : ISharingService
     {
         ToDoItem _selectedItem;
@@ -17,6 +19,11 @@ namespace Toodeloo.WinRT.Services
         {
             var dataTransferManager = DataTransferManager.GetForCurrentView();
             dataTransferManager.DataRequested += ShareRequested;
+        }
+
+        public void ShareSelectedItem()
+        {
+            DataTransferManager.ShowShareUI();
         }
 
         void ShareRequested(DataTransferManager sender, DataRequestedEventArgs args)
