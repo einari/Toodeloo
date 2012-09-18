@@ -1,7 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System;
+using System.Linq;
 using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Messages;
+using Toodeloo.WinRT.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Search;
@@ -87,7 +89,10 @@ namespace Toodeloo.WinRT
 
         void searchPane_SuggestionsRequested(SearchPane sender, SearchPaneSuggestionsRequestedEventArgs args)
         {
-            args.Request.SearchSuggestionCollection.AppendQuerySuggestion("Hello world");
+            var searchService = Container.Get<ISearchService>();
+            var result = searchService.GetSuggestionsFrom(args.QueryText).Take(5);
+            foreach( var suggestion in result ) 
+                args.Request.SearchSuggestionCollection.AppendQuerySuggestion(suggestion);
         }
 
         /// <summary>

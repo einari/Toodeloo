@@ -16,11 +16,18 @@ namespace Toodeloo.WinRT.Features.Content
         public event PropertyChangedEventHandler PropertyChanged;
 
         IToDoService _toDoService;
+        ISearchService _searchService;
         IDispatcher _dispatcher;
 
-        public ListViewModel(IToDoService toDoService, IMessenger messenger, IDispatcher dispatcher)
+        public ListViewModel(
+            IToDoService toDoService, 
+            IMessenger messenger, 
+            IDispatcher dispatcher,
+            ISearchService searchService
+            )
         {
             _toDoService = toDoService;
+            _searchService = searchService;
             _dispatcher = dispatcher;
             Items = new ObservableCollection<ToDoItem>();
             SearchResult = new ObservableCollection<ToDoItem>();
@@ -67,11 +74,9 @@ namespace Toodeloo.WinRT.Features.Content
         {
             SearchQuery = message.Query;
             SearchResult.Clear();
-
             if (string.IsNullOrEmpty(message.Query))
                 return;
-
-            var filtered = Items.Where(i => i.Title.ToLowerInvariant().Contains(message.Query.ToLowerInvariant()));
+            var filtered = _searchService.GetResultFrom(message.Query);
             foreach (var item in filtered)
                 SearchResult.Add(item);
         }

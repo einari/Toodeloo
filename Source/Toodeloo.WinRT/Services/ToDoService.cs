@@ -10,12 +10,20 @@ namespace Toodeloo.WinRT.Services
     {
         const   string baseUrl = "http://toodeloo.dolittle.com/ToDoItem";
 
+        ISearchService _searchService;
+
+        public ToDoService(ISearchService searchService)
+        {
+            _searchService = searchService;
+        }
+
         public async Task<IEnumerable<ToDoItem>> GetAllAsync()
         {
             var url = baseUrl+"/GetAll";
             var client = new HttpClient();
             var response = await client.GetStringAsync(url);
             var items = JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(response);
+            _searchService.SetItemsForIndex(items);
             return items;
         }
 
@@ -25,6 +33,7 @@ namespace Toodeloo.WinRT.Services
             var client = new HttpClient();
             var json = JsonConvert.SerializeObject(new { title = title });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+            _searchService.AddItemToIndex(new ToDoItem { Title = title });
             await client.PostAsync(url, content);
         }
 
@@ -34,6 +43,7 @@ namespace Toodeloo.WinRT.Services
             var client = new HttpClient();
             var json = JsonConvert.SerializeObject(new { id = item.Id });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+            _searchService.RemoveItemFromIndex(item);
             await client.PostAsync(url, content);
         }
     }

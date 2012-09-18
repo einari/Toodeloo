@@ -122,6 +122,8 @@
     <Compile Include="Features\Content\StringIsNullOrEmptyToVisibilityValueConverter.cs" />
     <Compile Include="Messages\ItemAdded.cs" />
     <Compile Include="Messages\SearchQuery.cs" />
+    <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Services\ToDoItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
