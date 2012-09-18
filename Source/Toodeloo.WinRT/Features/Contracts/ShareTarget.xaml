@@ -6,12 +6,23 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:content="using:Toodeloo.WinRT.Features.Content"
+    xmlns:toolkitExtensions="using:WinRTXamlToolkit.Controls.Extensions"
     mc:Ignorable="d">
 
     <Grid Background="Transparent" Height="Auto" VerticalAlignment="Stretch">
         <StackPanel Orientation="Vertical">
-            <TextBlock>Create new ToDo item</TextBlock>
-            <content:Sidebar/>
+            <TextBlock FontSize="30">Create new ToDo item</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="TitleTextBox" 
+                     Width="200" 
+                     toolkitExtensions:TextBoxValidationExtensions.Format="NonEmpty" 
+                     toolkitExtensions:TextBoxValidationExtensions.InvalidBrush="Red"
+                     toolkitExtensions:TextBoxValidationExtensions.ValidBrush="Green"
+                     />
+                <Button Width="80" Click="AddClick">
+                    Add
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

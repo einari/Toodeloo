@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using Toodeloo.WinRT.Services;
+using Windows.ApplicationModel.DataTransfer.ShareTarget;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,6 +18,13 @@ namespace Toodeloo.WinRT.Features.Contracts
             this.InitializeComponent();
         }
 
+        public ShareOperation ShareOperation { get; set; }
+        public string Title 
+        {
+            get { return TitleTextBox.Text; }
+            set { TitleTextBox.Text = value; }
+        }
+
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -33,6 +32,19 @@ namespace Toodeloo.WinRT.Features.Contracts
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        void AddClick(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Title))
+            {
+                ShareOperation.ReportStarted();
+
+                var toDoService = App.Container.Get<IToDoService>();
+                toDoService.AddItem(Title);
+
+                ShareOperation.ReportCompleted();
+            }
         }
     }
 }

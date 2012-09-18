@@ -3,7 +3,6 @@ using System.Windows.Input;
 using Toodeloo.WinRT.Infrastructure.Input;
 using Toodeloo.WinRT.Messages;
 using Toodeloo.WinRT.Services;
-using Windows.UI.Xaml;
 
 namespace Toodeloo.WinRT.Features.Content
 {
@@ -17,17 +16,18 @@ namespace Toodeloo.WinRT.Features.Content
             _toDoService = toDoService;
             _messenger = messenger;
 
-            AddCommand = DelegateCommand.Create<string>(Add);
+            AddCommand = DelegateCommand.Create(Add);
         }
 
         public ICommand AddCommand { get; private set; }
+        public string Title { get; set; }
 
-        void Add(string title)
+        void Add()
         {
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(Title))
             {
-                _toDoService.AddItem(title);
-                _messenger.Send(new ItemAdded { Title = title });
+                _toDoService.AddItem(Title);
+                _messenger.Send(new ItemAdded { Title = this.Title });
             }
         }
     }

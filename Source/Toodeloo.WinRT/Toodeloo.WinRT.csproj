@@ -126,15 +126,18 @@
     </Compile>
     <Compile Include="Messages\Activate.cs" />
     <Compile Include="Messages\ItemAdded.cs" />
+    <Compile Include="Messages\ItemSelected.cs" />
     <Compile Include="Messages\Resume.cs" />
     <Compile Include="Messages\SearchQuery.cs" />
     <Compile Include="Messages\Suspend.cs" />
     <Compile Include="Services\ApplicationService.cs" />
     <Compile Include="Services\IApplicationService.cs" />
+    <Compile Include="Services\ISharingService.cs" />
     <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\INotificationService.cs" />
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\SharingService.cs" />
     <Compile Include="Services\ToDoItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

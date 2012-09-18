@@ -15,9 +15,13 @@ namespace Toodeloo.WinRT.Features.Content
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        ItemSelected    ItemSelectedMessage = new ItemSelected();
+
         IToDoService _toDoService;
         ISearchService _searchService;
+        IMessenger _messenger;
         IDispatcher _dispatcher;
+        ToDoItem _selectedItem;
 
         public ListViewModel(
             IToDoService toDoService, 
@@ -29,15 +33,13 @@ namespace Toodeloo.WinRT.Features.Content
             _toDoService = toDoService;
             _searchService = searchService;
             _dispatcher = dispatcher;
+            _messenger = messenger;
+
             Items = new ObservableCollection<ToDoItem>();
             SearchResult = new ObservableCollection<ToDoItem>();
 
-            messenger.Register<ItemAdded>(this, message => Items.Add(new ToDoItem { Title = message.Title }));
-            messenger.Register<SearchQuery>(this, PerformSearch);
-
-            RefreshCommand = DelegateCommand.Create(Refresh);
-            DeleteCommand = DelegateCommand.Create(Delete);
-            ClearSearchCommand = DelegateCommand.Create(ClearSearch);
+            RegisterSubscriptions();
+            SetupCommands();
             
             Items.CollectionChanged += (s, c) =>
             {
@@ -48,9 +50,31 @@ namespace Toodeloo.WinRT.Features.Content
             PopulateItems();
         }
 
+        private void SetupCommands()
+        {
+            RefreshCommand = DelegateCommand.Create(Refresh);
+            DeleteCommand = DelegateCommand.Create(Delete);
+            ClearSearchCommand = DelegateCommand.Create(ClearSearch);
+        }
+
+        private void RegisterSubscriptions()
+        {
+            _messenger.Register<ItemAdded>(this, message => Items.Add(new ToDoItem { Title = message.Title }));
+            _messenger.Register<SearchQuery>(this, PerformSearch);
+        }
+
         public ObservableCollection<ToDoItem> Items { get; private set; }
         public ObservableCollection<ToDoItem> SearchResult { get; private set; }
-        public ToDoItem SelectedItem { get; set; }
+        public ToDoItem SelectedItem 
+        { 
+            get { return _selectedItem; }
+            set 
+            { 
+                _selectedItem = value; 
+                ItemSelectedMessage.Item = value;
+                _messenger.Send(ItemSelectedMessage);
+            }
+        }
         
         public string SearchQuery { get; set; }
 

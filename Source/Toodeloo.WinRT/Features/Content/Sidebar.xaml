@@ -17,11 +17,11 @@
                      toolkitExtensions:TextBoxValidationExtensions.Format="NonEmpty" 
                      toolkitExtensions:TextBoxValidationExtensions.InvalidBrush="Red"
                      toolkitExtensions:TextBoxValidationExtensions.ValidBrush="Green"
+                     Text="{Binding Title, Mode=TwoWay}"
                      />
             <Button 
                 Width="80"
-                Command="{Binding AddCommand}" 
-                CommandParameter="{Binding ElementName=TitleTextBox, Path=Text}">
+                Command="{Binding AddCommand}">
                 Add
             </Button>
         </StackPanel>
