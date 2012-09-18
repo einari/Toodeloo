@@ -8,10 +8,12 @@ namespace Toodeloo.Web.vNext.Services
     public class ToDoItemService
     {
         IEntityContext<ToDoItem> _entityContext;
+        IPushService _pushService;
 
-        public ToDoItemService(IEntityContext<ToDoItem> entityContext)
+        public ToDoItemService(IEntityContext<ToDoItem> entityContext, IPushService pushService)
         {
             _entityContext = entityContext;
+            _pushService = pushService;
         }
 
 
@@ -27,6 +29,7 @@ namespace Toodeloo.Web.vNext.Services
                 Id = Guid.NewGuid(),
                 Title = title
             });
+            _pushService.PushNewItem(title);
         }
 
         public void Remove(string id)

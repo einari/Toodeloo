@@ -80,6 +80,9 @@
     <Reference Include="Ninject">
       <HintPath>..\Solutions\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="NotificationsExtensions">
+      <HintPath>..\Solutions\packages\WnsRecipe.0.0.3.2\lib\net40\NotificationsExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -102,8 +105,26 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\Solutions\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="WnsRecipe">
+      <HintPath>..\Solutions\packages\WnsRecipe.0.0.3.2\lib\net40\WnsRecipe.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Readme\Content\AddingNotificationsExtensions.png" />
+    <Content Include="App_Readme\Content\EnableCustomDiagnostics.png" />
+    <Content Include="App_Readme\Content\EnableDiagnostics.png" />
+    <Content Include="App_Readme\Content\SendNotification.png" />
+    <Content Include="App_Readme\Content\ServiceConfiguration.png" />
+    <Content Include="App_Readme\Content\Site.css" />
+    <Content Include="App_Readme\Content\ToastNotificationTemplate.png" />
+    <Content Include="App_Readme\Content\TraceSourceConfiguration.png" />
+    <Content Include="App_Readme\Content\TraceSourceProperty.png" />
+    <Content Include="App_Readme\Content\WATWindows8.png" />
+    <Content Include="App_Readme\Content\WnsAccessTokenProvider.png" />
+    <Content Include="App_Readme\Content\WnsAzureConfigurationSetting.png" />
+    <Content Include="App_Readme\Content\WnsRecipeAssembly.png" />
+    <Content Include="App_Readme\WnsRecipe.Readme.htm" />
+    <Content Include="Data\readme.txt" />
     <Content Include="Features\content\index.html" />
     <Content Include="Features\content\index.js" />
     <Content Include="Features\layout\header.html" />
@@ -173,6 +194,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IPushService.cs" />
+    <Compile Include="Services\PushService.cs" />
     <Compile Include="Services\ToDoItem.cs" />
     <Compile Include="Services\ToDoItemService.cs" />
   </ItemGroup>
