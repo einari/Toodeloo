@@ -22,14 +22,14 @@ namespace Toodeloo.WinRT
     sealed partial class App : Application
     {
         public static IContainer Container { get; private set; }
-        public static INotificationService ApplicationService { get; private set; }
+        public static INotificationService NotificationService { get; private set; }
 
         static App()
         {
             Container = ContainerContext.Current;
             Container.Register<IMessenger>(Messenger.Default);
 
-            ApplicationService = Container.Get<INotificationService>();
+            NotificationService = Container.Get<INotificationService>();
         }
 
         /// <summary>
