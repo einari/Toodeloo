@@ -1,10 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System;
 using Toodeloo.WinRT.Infrastructure.Execution;
-using Toodeloo.WinRT.Infrastructure.Execution.Activation;
-using Toodeloo.WinRT.Infrastructure.Execution.Binding;
+using Toodeloo.WinRT.Messages;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Search;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -66,6 +66,10 @@ namespace Toodeloo.WinRT
                 Window.Current.Content = rootFrame;
             }
 
+
+            var searchPane = SearchPane.GetForCurrentView();
+            searchPane.SuggestionsRequested += searchPane_SuggestionsRequested;
+
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
@@ -80,6 +84,12 @@ namespace Toodeloo.WinRT
             Window.Current.Activate();
         }
 
+
+        void searchPane_SuggestionsRequested(SearchPane sender, SearchPaneSuggestionsRequestedEventArgs args)
+        {
+            args.Request.SearchSuggestionCollection.AppendQuerySuggestion("Hello world");
+        }
+
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
         /// without knowing whether the application will be terminated or resumed with the contents
@@ -92,6 +102,15 @@ namespace Toodeloo.WinRT
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        /// <summary>
+        /// Invoked when the application is activated to display search results.
+        /// </summary>
+        /// <param name="args">Details about the activation request.</param>
+        protected async override void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args)
+        {
+            Messenger.Default.Send(new SearchQuery { Query = args.QueryText });
         }
     }
 }

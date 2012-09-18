@@ -8,15 +8,48 @@
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=List}"
     >
+    <Page.Resources>
+        <local:CountToVisibilityValueConverter x:Key="countToVisibilityConverter"/>
+        <local:StringIsNullOrEmptyToVisibilityValueConverter x:Key="stringToVisibilityConverter"/>
+
+        <Style x:Key="ItemList" TargetType="ListView">
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Margin="8,8,8,8" Text="{Binding Title}"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Margin="8,8,8,8" Text="{Binding Title}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel Orientation="Vertical">
+            <Grid Visibility="{Binding Count, Converter={StaticResource countToVisibilityConverter}}">
+                <TextBlock Text="No items"/>
+            </Grid>
+            <ListView Visibility="{Binding SearchQuery, Converter={StaticResource stringToVisibilityConverter}, ConverterParameter=true}" 
+                      Style="{StaticResource ItemList}" 
+                      ItemsSource="{Binding Items}" 
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"/>
+
+            <Grid Visibility="{Binding SearchQuery, Converter={StaticResource stringToVisibilityConverter}}">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>
+                            <Run> Search : </Run>
+                            <Run Text="{Binding SearchQuery}"/>
+                        </TextBlock>
+                        <Button Command="{Binding ClearSearchCommand}" Style="{StaticResource DeleteAppBarButtonStyle}"/>
+                    </StackPanel>
+
+                    <ListView 
+                      Style="{StaticResource ItemList}" 
+                      ItemsSource="{Binding SearchResult}" 
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 
     <Page.BottomAppBar>

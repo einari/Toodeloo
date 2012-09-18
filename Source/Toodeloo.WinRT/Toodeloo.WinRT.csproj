@@ -106,6 +106,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="BackgroundTask.cs" />
+    <Compile Include="Features\Content\CountToVisibilityValueConverter.cs" />
     <Compile Include="Features\Content\IndexViewModel.cs" />
     <Compile Include="Features\Content\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
@@ -118,7 +119,9 @@
     <Compile Include="Features\Content\Sidebar.xaml.cs">
       <DependentUpon>Sidebar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Features\Content\StringIsNullOrEmptyToVisibilityValueConverter.cs" />
     <Compile Include="Messages\ItemAdded.cs" />
+    <Compile Include="Messages\SearchQuery.cs" />
     <Compile Include="Services\ToDoItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -176,9 +179,6 @@
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Win8">
       <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\GalaSoft.MvvmLight.Win8.dll</HintPath>
-    </Reference>
-    <Reference Include="MicroSliver.Metro">
-      <HintPath>..\Solutions\packages\MicroSliver.2.1.6.0\lib\winrt45\MicroSliver.Metro.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\Microsoft.Practices.ServiceLocation.dll</HintPath>
