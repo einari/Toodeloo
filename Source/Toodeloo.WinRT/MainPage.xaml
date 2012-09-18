@@ -10,6 +10,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <content:Index/>
+        <StackPanel Orientation="Vertical">
+            <content:Index/>
+        </StackPanel>
     </Grid>
 </Page>

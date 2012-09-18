@@ -5,10 +5,6 @@ namespace Toodeloo.WinRT
 {
     public class ViewModelLocator
     {
-        public ViewModelLocator()
-        {
-        }
-
         public void Initialize()
         {
             foreach (var property in this.GetType().GetTypeInfo().DeclaredProperties)

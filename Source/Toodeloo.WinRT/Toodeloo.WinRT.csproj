@@ -15,6 +15,7 @@
     <PackageCertificateKeyFile>Toodeloo.WinRT_TemporaryKey.pfx</PackageCertificateKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solutions\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <PackageCertificateThumbprint>F6960A570CF1C0FF73B8FDC4643E40E860BFDBF4</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -122,6 +123,8 @@
     <Compile Include="Features\Content\StringIsNullOrEmptyToVisibilityValueConverter.cs" />
     <Compile Include="Messages\ItemAdded.cs" />
     <Compile Include="Messages\SearchQuery.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\INotificationService.cs" />
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Services\ToDoItem.cs" />
@@ -148,6 +151,7 @@
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\WideLogo.png" />
+    <Content Include="WAT.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

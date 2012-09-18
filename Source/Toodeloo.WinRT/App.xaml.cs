@@ -2,11 +2,13 @@
 using System;
 using System.Linq;
 using Toodeloo.WinRT.Infrastructure.Execution;
+using Toodeloo.WinRT.Infrastructure.Messages;
 using Toodeloo.WinRT.Messages;
 using Toodeloo.WinRT.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Search;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -20,11 +22,14 @@ namespace Toodeloo.WinRT
     sealed partial class App : Application
     {
         public static IContainer Container { get; private set; }
+        public static INotificationService ApplicationService { get; private set; }
 
         static App()
         {
             Container = ContainerContext.Current;
             Container.Register<IMessenger>(Messenger.Default);
+
+            ApplicationService = Container.Get<INotificationService>();
         }
 
         /// <summary>

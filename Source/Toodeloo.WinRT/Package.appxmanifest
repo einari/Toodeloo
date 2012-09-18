@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="fcc393c6-5a2c-4b81-8396-5b6f13b4e2b5" Publisher="CN=Einar" Version="1.0.0.0" />
+  <Identity Name="BUILD.46db8f0e-71a3-4d09-b697-0c6d24ef22c6" Publisher="CN=DoLittle Studios" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Toodeloo.WinRT</DisplayName>
     <PublisherDisplayName>DoLittle Studios</PublisherDisplayName>
@@ -24,7 +24,6 @@
         <Extension Category="windows.backgroundTasks" EntryPoint="Toodeloo.WinRT.BackgroundTask">
           <BackgroundTasks>
             <Task Type="pushNotification" />
-            <Task Type="systemEvent" />
           </BackgroundTasks>
         </Extension>
         <Extension Category="windows.search" />
@@ -32,6 +31,8 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClientServer" />
     <Capability Name="internetClient" />
   </Capabilities>
 </Package>

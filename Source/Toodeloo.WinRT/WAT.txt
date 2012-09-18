@@ -1,0 +1,5 @@
+﻿Package name : BUILD.46db8f0e-71a3-4d09-b697-0c6d24ef22c6
+
+Client Secret : P00x4b78vxQnaN799gyPJgbdbffRyJZ7
+
+Package Security Identifier (SID) : ms-app://s-1-15-2-1365235042-3950292793-1450507326-4003872592-2110243094-239169135-4162116563
