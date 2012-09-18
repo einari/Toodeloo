@@ -2,6 +2,10 @@
 using System.Linq;
 using System.Collections.Generic;
 using Bifrost.Entities;
+using MongoDB.Driver;
+using MongoDB.Bson.Serialization;
+using System.Configuration;
+using MongoDB.Bson;
 
 namespace Toodeloo.Web.vNext.Services
 {
@@ -35,8 +39,21 @@ namespace Toodeloo.Web.vNext.Services
         public void Remove(string id)
         {
             var guid = Guid.Parse(id);
+
             var entity = _entityContext.Entities.Where(e => e.Id == guid).SingleOrDefault();
-            _entityContext.Delete(entity);
+
+            var connectionString = ConfigurationManager.AppSettings["MONGOHQ_URL"];
+            var databaseString = ConfigurationManager.AppSettings["MONGO_DB"];
+
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase(databaseString);
+            var collection = database.GetCollection<ToDoItem>(typeof(ToDoItem).Name);
+
+            var classMap = BsonClassMap<ToDoItem>.LookupClassMap(typeof(ToDoItem)) as BsonClassMap<ToDoItem>;
+            var actualId = classMap.IdMemberMap.Getter(entity);
+            var bsonId = BsonValue.Create(actualId);
+            var query = new QueryDocument(classMap.IdMemberMap.ElementName, bsonId);
+            collection.Remove(query);
         }
     }
 }

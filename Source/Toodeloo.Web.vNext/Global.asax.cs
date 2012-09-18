@@ -21,10 +21,8 @@ namespace Toodeloo.Web.vNext
 
         public override void OnConfigure(IConfigure configure)
         {
-            var connectionString = "mongodb://appharbor:27285b33889ab6e96bac73e53011e376@alex.mongohq.com:10046/61454f3e_9890_48bb_8a1e_e0fc0127a648";//ConfigurationManager.AppSettings["MONGOHQ_URL"];
-			var database = "61454f3e_9890_48bb_8a1e_e0fc0127a648"; //ConfigurationManager.AppSettings["MONGO_DB"];
-
-        //mongodb://appharbor:27285b33889ab6e96bac73e53011e376@alex.mongohq.com:10046/61454f3e_9890_48bb_8a1e_e0fc0127a648
+            var connectionString = ConfigurationManager.AppSettings["MONGOHQ_URL"]; // "mongodb://appharbor:27285b33889ab6e96bac73e53011e376@alex.mongohq.com:10046/61454f3e_9890_48bb_8a1e_e0fc0127a648";
+            var database = ConfigurationManager.AppSettings["MONGO_DB"];// "61454f3e_9890_48bb_8a1e_e0fc0127a648"; 
 
             configure
                 .UsingConfigConfigurationSource()
