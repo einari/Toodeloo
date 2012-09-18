@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Toodeloo.WinRT.Execution.Activation;
+using Toodeloo.WinRT.Infrastructure.Execution.Activation;
 
-namespace Toodeloo.WinRT.Execution.Binding
+namespace Toodeloo.WinRT.Infrastructure.Execution.Binding
 {
 	public class BindingDiscoverer : IBindingDiscoverer
 	{

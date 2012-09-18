@@ -105,11 +105,29 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BackgroundTask.cs" />
+    <Compile Include="Features\Content\IndexViewModel.cs" />
+    <Compile Include="Features\Content\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Content\ListViewModel.cs" />
+    <Compile Include="Features\Content\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Content\SidebarViewModel.cs" />
+    <Compile Include="Features\Content\Sidebar.xaml.cs">
+      <DependentUpon>Sidebar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\ItemAdded.cs" />
+    <Compile Include="Services\ToDoItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Messages\ItemCountChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Services\IToDoService.cs" />
+    <Compile Include="Services\ToDoService.cs" />
+    <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -119,10 +137,12 @@
     <None Include="Toodeloo.WinRT_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\WideLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -132,6 +152,18 @@
     <Page Include="Common\StandardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\Content\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\Content\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\Content\Sidebar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +182,9 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\Solutions\packages\MvvmLight.4.1.23.0\lib\winrt45\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Solutions\packages\Newtonsoft.Json.4.5.9\lib\winrt45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WinRTXamlToolkit">
       <HintPath>..\Solutions\packages\winrtxamltoolkit.1.2.2\lib\winrt45\WinRTXamlToolkit.dll</HintPath>
@@ -173,4 +208,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <UsingTask TaskName="NotifyPropertyWeaverMsBuildTask.WeavingTask" AssemblyFile="$(SolutionDir)Tools\NotifyPropertyWeaverMsBuildTask.dll" />
+  <Target Name="AfterCompile">
+    <NotifyPropertyWeaverMsBuildTask.WeavingTask />
+  </Target>
 </Project>

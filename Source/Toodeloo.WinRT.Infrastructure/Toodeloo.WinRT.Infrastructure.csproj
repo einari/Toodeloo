@@ -9,7 +9,7 @@
     <ProjectGuid>{284D983E-4F91-4525-9B52-21C37373EA73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Toodeloo.WinRT.Infrastructure</RootNamespace>
+    <RootNamespace>Toodeloo.WinRT.Infrastructure.Infrastructure</RootNamespace>
     <AssemblyName>Toodeloo.WinRT.Infrastructure</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
@@ -133,6 +133,11 @@
     <Compile Include="Execution\ITypeDiscoverer.cs" />
     <Compile Include="Execution\SingletonAttribute.cs" />
     <Compile Include="Execution\TypeDiscoverer.cs" />
+    <Compile Include="Execution\Dispatcher.cs" />
+    <Compile Include="Execution\IDispatcher.cs" />
+    <Compile Include="Input\DelegateCommand.cs" />
+    <Compile Include="Input\ICanBeEnabled.cs" />
+    <Compile Include="Input\ICanExecuteCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

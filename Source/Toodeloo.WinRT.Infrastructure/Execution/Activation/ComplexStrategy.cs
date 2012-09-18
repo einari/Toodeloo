@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace Toodeloo.WinRT.Execution.Activation
+namespace Toodeloo.WinRT.Infrastructure.Execution.Activation
 {
 	public class ComplexStrategy : IStrategy
 	{
@@ -16,7 +16,7 @@ namespace Toodeloo.WinRT.Execution.Activation
 		public bool CanActivate(Type type)
 		{
             var typeInfo = type.GetTypeInfo();
-			if (!typeInfo.IsValueType|| HasDefaultConstructor(type) )
+			if (typeInfo.IsValueType|| HasDefaultConstructor(type) )
 				return false;
 
 			var constructors = typeInfo.DeclaredConstructors.ToArray();

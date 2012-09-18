@@ -1,8 +1,8 @@
 ﻿using System;
-using Toodeloo.WinRT.Execution.Activation;
-using Toodeloo.WinRT.Execution.Binding;
+using Toodeloo.WinRT.Infrastructure.Execution.Activation;
+using Toodeloo.WinRT.Infrastructure.Execution.Binding;
 
-namespace Toodeloo.WinRT.Execution
+namespace Toodeloo.WinRT.Infrastructure.Execution
 {
 	public class Container : IContainer
 	{

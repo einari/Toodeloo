@@ -1,6 +1,6 @@
 using System;
 
-namespace Toodeloo.WinRT.Execution
+namespace Toodeloo.WinRT.Infrastructure.Execution
 {
 	/// <summary>
 	/// Discovers types based upon basetypes

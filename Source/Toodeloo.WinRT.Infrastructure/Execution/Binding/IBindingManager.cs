@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Toodeloo.WinRT.Execution.Binding
+namespace Toodeloo.WinRT.Infrastructure.Execution.Binding
 {
 	public interface IBindingManager
 	{

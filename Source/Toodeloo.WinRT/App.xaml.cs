@@ -1,7 +1,8 @@
-﻿using System;
-using Toodeloo.WinRT.Execution;
-using Toodeloo.WinRT.Execution.Activation;
-using Toodeloo.WinRT.Execution.Binding;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
+using Toodeloo.WinRT.Infrastructure.Execution;
+using Toodeloo.WinRT.Infrastructure.Execution.Activation;
+using Toodeloo.WinRT.Infrastructure.Execution.Binding;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -11,27 +12,25 @@ using Windows.UI.Xaml.Controls;
 
 namespace Toodeloo.WinRT
 {
-    public interface ISomething
-    {
-    }
-
-    public class Something : ISomething
-    {
-    }
-
-
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
+        public static IContainer Container { get; private set; }
+
+        static App()
+        {
+            Container = ContainerContext.Current;
+            Container.Register<IMessenger>(Messenger.Default);
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
-            var instance = ContainerContext.Current.Get<ISomething>();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
@@ -44,6 +43,11 @@ namespace Toodeloo.WinRT
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
+            Container.Register<IDispatcher>(new Dispatcher(Window.Current.Dispatcher));
+            var viewModelLocator = Resources["ViewModelLocator"] as ViewModelLocator;
+            viewModelLocator.Initialize();
+
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,

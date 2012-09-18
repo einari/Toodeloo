@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Toodeloo.WinRT.Execution.Activation
+namespace Toodeloo.WinRT.Infrastructure.Execution.Activation
 {
 	public class ActivationManager : IActivationManager
 	{

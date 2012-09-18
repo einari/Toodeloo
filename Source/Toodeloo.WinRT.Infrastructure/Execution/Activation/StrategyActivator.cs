@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace Toodeloo.WinRT.Execution.Activation
+namespace Toodeloo.WinRT.Infrastructure.Execution.Activation
 {
 	public class StrategyActivator : IStrategyActivator
 	{

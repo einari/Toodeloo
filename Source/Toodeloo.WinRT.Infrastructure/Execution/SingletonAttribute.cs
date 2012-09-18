@@ -8,7 +8,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the license at 
 //
-//   http://Toodeloo.WinRT.codeplex.com/license
+//   http://Toodeloo.WinRT.Infrastructure.codeplex.com/license
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,7 +21,7 @@
 
 using System;
 
-namespace Toodeloo.WinRT.Execution
+namespace Toodeloo.WinRT.Infrastructure.Execution
 {
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 	public class SingletonAttribute : Attribute

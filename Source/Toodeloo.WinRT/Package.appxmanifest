@@ -1,39 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity Name="fcc393c6-5a2c-4b81-8396-5b6f13b4e2b5"
-            Publisher="CN=Einar"
-            Version="1.0.0.0" />
-
+  <Identity Name="fcc393c6-5a2c-4b81-8396-5b6f13b4e2b5" Publisher="CN=Einar" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Toodeloo.WinRT</DisplayName>
-    <PublisherDisplayName>Einar</PublisherDisplayName>
+    <PublisherDisplayName>DoLittle Studios</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
     <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="Toodeloo.WinRT.App">
-        <VisualElements
-            DisplayName="Toodeloo.WinRT"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
-            Description="Toodeloo.WinRT"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <DefaultTile ShowName="allLogos" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Toodeloo.WinRT.App">
+      <VisualElements DisplayName="Toodeloo" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Demo app used in presentations" ForegroundText="light" BackgroundColor="#139404" ToastCapable="true">
+        <LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#139404" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="Toodeloo.WinRT.BackgroundTask">
+          <BackgroundTasks>
+            <Task Type="pushNotification" />
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Toodeloo.WinRT.Features.Content.List"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Toodeloo.WinRT.Features.Content"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=List}"
+    >
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="8,8,8,8" Text="{Binding Title}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <AppBar>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding RefreshCommand}" Style="{StaticResource RefreshAppBarButtonStyle}"/>
+                <Button Command="{Binding DeleteCommand}" Style="{StaticResource RemoveAppBarButtonStyle}"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+</Page>

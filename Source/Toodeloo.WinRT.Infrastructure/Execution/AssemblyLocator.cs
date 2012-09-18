@@ -7,7 +7,7 @@ using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Search;
 
-namespace Toodeloo.WinRT.Execution
+namespace Toodeloo.WinRT.Infrastructure.Execution
 {
 	public class AssemblyLocator : IAssemblyLocator
 	{

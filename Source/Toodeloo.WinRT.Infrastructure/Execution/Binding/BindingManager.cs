@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Toodeloo.WinRT.Execution.Binding
+namespace Toodeloo.WinRT.Infrastructure.Execution.Binding
 {
 	public class BindingManager : IBindingManager
 	{

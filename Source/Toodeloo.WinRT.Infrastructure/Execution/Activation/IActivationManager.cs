@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Toodeloo.WinRT.Execution.Activation
+namespace Toodeloo.WinRT.Infrastructure.Execution.Activation
 {
 	public interface IActivationManager
 	{

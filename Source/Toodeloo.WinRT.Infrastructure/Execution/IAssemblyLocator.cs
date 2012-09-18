@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace Toodeloo.WinRT.Execution
+namespace Toodeloo.WinRT.Infrastructure.Execution
 {
 	public interface IAssemblyLocator
 	{
