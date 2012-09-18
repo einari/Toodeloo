@@ -27,6 +27,11 @@
           </BackgroundTasks>
         </Extension>
         <Extension Category="windows.search" />
+        <Extension Category="windows.shareTarget">
+          <ShareTarget>
+            <DataFormat>text</DataFormat>
+          </ShareTarget>
+        </Extension>
       </Extensions>
     </Application>
   </Applications>

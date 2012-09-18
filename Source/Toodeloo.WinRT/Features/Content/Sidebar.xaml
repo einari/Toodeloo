@@ -10,7 +10,7 @@
     DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Sidebar}"
     >
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Transparent">
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="TitleTextBox" 
                      Width="200" 

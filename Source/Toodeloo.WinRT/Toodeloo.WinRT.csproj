@@ -121,8 +121,16 @@
       <DependentUpon>Sidebar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Features\Content\StringIsNullOrEmptyToVisibilityValueConverter.cs" />
+    <Compile Include="Features\Contracts\ShareTarget.xaml.cs">
+      <DependentUpon>ShareTarget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Activate.cs" />
     <Compile Include="Messages\ItemAdded.cs" />
+    <Compile Include="Messages\Resume.cs" />
     <Compile Include="Messages\SearchQuery.cs" />
+    <Compile Include="Messages\Suspend.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\IApplicationService.cs" />
     <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\INotificationService.cs" />
     <Compile Include="Services\ISearchService.cs" />
@@ -171,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Features\Content\Sidebar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\Contracts\ShareTarget.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

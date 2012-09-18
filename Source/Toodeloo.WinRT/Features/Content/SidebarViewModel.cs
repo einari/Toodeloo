@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Toodeloo.WinRT.Infrastructure.Input;
 using Toodeloo.WinRT.Messages;
 using Toodeloo.WinRT.Services;
+using Windows.UI.Xaml;
 
 namespace Toodeloo.WinRT.Features.Content
 {

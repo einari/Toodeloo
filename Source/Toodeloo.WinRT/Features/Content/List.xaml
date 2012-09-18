@@ -23,7 +23,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Transparent">
         <StackPanel Orientation="Vertical">
             <Grid Visibility="{Binding Count, Converter={StaticResource countToVisibilityConverter}}">
                 <TextBlock Text="No items"/>

@@ -20,7 +20,7 @@
     </Page.Resources>
     
         
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Transparent">
 
         <StackPanel Orientation="Vertical" Margin="39,59,39,59">
             <Grid>
