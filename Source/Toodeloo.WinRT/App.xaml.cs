@@ -67,7 +67,6 @@ namespace Toodeloo.WinRT
             if (rootFrame == null)
             {
                 rootFrame = new Frame();
-
                 if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
                     ApplicationService.Resume();
 
@@ -79,23 +78,16 @@ namespace Toodeloo.WinRT
                     throw new Exception("Failed to create initial page");
 
             SharingService.Initialize();
-
             Window.Current.Activate();
         }
 
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-
             ApplicationService.Suspend();
-
             deferral.Complete();
         }
 
-        /// <summary>
-        /// Invoked when the application is activated to display search results.
-        /// </summary>
-        /// <param name="args">Details about the activation request.</param>
         protected async override void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args)
         {
             SearchService.PerformSearch(args.QueryText);
