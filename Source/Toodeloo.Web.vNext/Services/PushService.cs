@@ -36,6 +36,13 @@ namespace Toodeloo.Web.vNext.Services
             return _clientUrls;
         }
 
+        public void ClearClients()
+        {
+            _clientUrls.Clear();
+            SaveClients();
+        }
+        
+
         public void PushNewItem(string title)
         {
             foreach (var url in _clientUrls)

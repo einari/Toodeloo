@@ -37,6 +37,7 @@ namespace Toodeloo.WinRT
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
         }
 
         
@@ -65,24 +66,6 @@ namespace Toodeloo.WinRT
             Container.Register<IDispatcher>(new Dispatcher(Window.Current.Dispatcher));
             var viewModelLocator = Resources["ViewModelLocator"] as ViewModelLocator;
             viewModelLocator.Initialize();
-
-
-            var channel = PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
-
-            channel.AsTask<PushNotificationChannel>().ContinueWith(
-                async t =>
-                {
-                    var uri = t.Result.Uri;
-
-                    //var url = "http://localhost2:1462/Push/RegisterClient";
-                    var url = "http://toodeloo.dolittle.com/Push/RegisterClient";
-                    var client = new HttpClient();
-                    var json = JsonConvert.SerializeObject(new { url = uri });
-                    var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                    await client.PostAsync(url, content);
-                });
-
 
             var rootFrame = Window.Current.Content as Frame;
 
