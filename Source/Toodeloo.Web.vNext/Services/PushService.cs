@@ -31,6 +31,11 @@ namespace Toodeloo.Web.vNext.Services
             SaveClients();
         }
 
+        public IEnumerable<string> RegisteredClients()
+        {
+            return _clientUrls;
+        }
+
         public void PushNewItem(string title)
         {
             foreach (var url in _clientUrls)
