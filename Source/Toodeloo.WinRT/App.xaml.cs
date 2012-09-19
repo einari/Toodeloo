@@ -1,15 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using Newtonsoft.Json;
 using System;
-using System.Net.Http;
-using System.Text;
 using Toodeloo.WinRT.Features.Contracts;
 using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.Networking.PushNotifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -38,27 +34,6 @@ namespace Toodeloo.WinRT
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-        }
-
-        
-        protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
-        {
-            var view = new ShareTarget();
-            view.ShareOperation = args.ShareOperation;
-            GetTextFromShare(view, args);
-            Window.Current.Content = view;
-            Window.Current.Activate();
-            base.OnShareTargetActivated(args);
-        }
-
-        async void GetTextFromShare(ShareTarget target, ShareTargetActivatedEventArgs args)
-        {
-
-            if (args.ShareOperation.Data.Contains(StandardDataFormats.Text))
-            {
-                var text = await args.ShareOperation.Data.GetTextAsync();
-                target.Title = text;
-            }
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -97,5 +72,25 @@ namespace Toodeloo.WinRT
         {
             SearchService.PerformSearch(args.QueryText);
         }
+
+        protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
+        {
+            var view = new ShareTarget();
+            view.ShareOperation = args.ShareOperation;
+            GetTextFromShare(view, args);
+            Window.Current.Content = view;
+            Window.Current.Activate();
+            base.OnShareTargetActivated(args);
+        }
+
+        async void GetTextFromShare(ShareTarget target, ShareTargetActivatedEventArgs args)
+        {
+            if (args.ShareOperation.Data.Contains(StandardDataFormats.Text))
+            {
+                var text = await args.ShareOperation.Data.GetTextAsync();
+                target.Title = text;
+            }
+        }
+
     }
 }
