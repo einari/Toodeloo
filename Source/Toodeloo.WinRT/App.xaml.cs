@@ -1,13 +1,13 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System;
 using Toodeloo.WinRT.Features.Contracts;
-using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Yggdrasil;
 
 namespace Toodeloo.WinRT
 {
@@ -38,7 +38,7 @@ namespace Toodeloo.WinRT
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            Container.Register<IDispatcher>(new Dispatcher(Window.Current.Dispatcher));
+            Container.Register<Toodeloo.WinRT.Infrastructure.Execution.IDispatcher>(new Toodeloo.WinRT.Infrastructure.Execution.Dispatcher(Window.Current.Dispatcher));
             var viewModelLocator = Resources["ViewModelLocator"] as ViewModelLocator;
             viewModelLocator.Initialize();
 

@@ -210,6 +210,9 @@
     <Reference Include="WinRTXamlToolkit">
       <HintPath>..\Solutions\packages\winrtxamltoolkit.1.2.2\lib\winrt45\WinRTXamlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Yggdrasil">
+      <HintPath>..\Solutions\packages\Yggdrasil.0.5.0.3\lib\winrt45\Yggdrasil.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Toodeloo.WinRT.Infrastructure\Toodeloo.WinRT.Infrastructure.csproj">

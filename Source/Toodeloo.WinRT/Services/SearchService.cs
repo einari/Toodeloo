@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
 using System.Linq;
-using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Messages;
 using Windows.ApplicationModel.Search;
+using Yggdrasil;
 
 namespace Toodeloo.WinRT.Services
 {

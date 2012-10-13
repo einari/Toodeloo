@@ -5,6 +5,8 @@ using System.Linq;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
+using Windows.Storage.Pickers;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -27,6 +29,7 @@ namespace Toodeloo.WinRT
         {
             this.InitializeComponent();
         }
+
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.

@@ -102,37 +102,6 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Execution\Activation\ActivationManager.cs" />
-    <Compile Include="Execution\Activation\ActivationStrategyConstructorMissing.cs" />
-    <Compile Include="Execution\Activation\ComplexStrategy.cs" />
-    <Compile Include="Execution\Activation\ConstantStrategy.cs" />
-    <Compile Include="Execution\Activation\DefaultStrategy.cs" />
-    <Compile Include="Execution\Activation\IActivationManager.cs" />
-    <Compile Include="Execution\Activation\IScope.cs" />
-    <Compile Include="Execution\Activation\IStrategy.cs" />
-    <Compile Include="Execution\Activation\IStrategyActivator.cs" />
-    <Compile Include="Execution\Activation\MissingTargetTypeException.cs" />
-    <Compile Include="Execution\Activation\SingletonScope.cs" />
-    <Compile Include="Execution\Activation\StrategyActivator.cs" />
-    <Compile Include="Execution\Activation\UnableToActivateException.cs" />
-    <Compile Include="Execution\AssemblyLocator.cs" />
-    <Compile Include="Execution\Binding\BindingDiscoverer.cs" />
-    <Compile Include="Execution\Binding\BindingManager.cs" />
-    <Compile Include="Execution\Binding\DefaultBindingConvention.cs" />
-    <Compile Include="Execution\Binding\IBinding.cs" />
-    <Compile Include="Execution\Binding\IBindingConvention.cs" />
-    <Compile Include="Execution\Binding\IBindingDiscoverer.cs" />
-    <Compile Include="Execution\Binding\IBindingManager.cs" />
-    <Compile Include="Execution\Binding\SelfBindingConvention.cs" />
-    <Compile Include="Execution\Binding\StandardBinding.cs" />
-    <Compile Include="Execution\Container.cs" />
-    <Compile Include="Execution\ContainerContext.cs" />
-    <Compile Include="Execution\IAssemblyLocator.cs" />
-    <Compile Include="Execution\IContainer.cs" />
-    <Compile Include="Execution\In.cs" />
-    <Compile Include="Execution\ITypeDiscoverer.cs" />
-    <Compile Include="Execution\SingletonAttribute.cs" />
-    <Compile Include="Execution\TypeDiscoverer.cs" />
     <Compile Include="Execution\Dispatcher.cs" />
     <Compile Include="Execution\IDispatcher.cs" />
     <Compile Include="Input\DelegateCommand.cs" />

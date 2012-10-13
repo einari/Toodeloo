@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using System.Collections.Generic;
 using Toodeloo.WinRT.Messages;
 
 namespace Toodeloo.WinRT.Services

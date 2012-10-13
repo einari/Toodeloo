@@ -3,11 +3,11 @@ using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using Toodeloo.WinRT.Infrastructure.Execution;
 using Toodeloo.WinRT.Infrastructure.Input;
 using Toodeloo.WinRT.Infrastructure.Messages;
 using Toodeloo.WinRT.Messages;
 using Toodeloo.WinRT.Services;
+using Toodeloo.WinRT.Infrastructure.Execution;
 
 namespace Toodeloo.WinRT.Features.Content
 {
