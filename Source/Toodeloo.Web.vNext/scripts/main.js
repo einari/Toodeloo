@@ -4,7 +4,7 @@ require.config({
 	optimize: "none",
 
 	paths: {
-	    "jquery": "jquery.min",
+	    "jquery": "jquery-1.7.1.min",
 	    "knockout": "knockout-2.0.0",
 		"knockout.mapping": "knockout.mapping-2.0.0",
 	    "bifrost": "Bifrost.debug",
