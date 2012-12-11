@@ -27,6 +27,7 @@ namespace Toodeloo.WinRT
             NotificationService = Container.Get<INotificationService>();
             ApplicationService = Container.Get<IApplicationService>();
             SharingService = Container.Get<ISharingService>();
+            SearchService = Container.Get<ISearchService>();
         }
 
         public App()
@@ -58,6 +59,7 @@ namespace Toodeloo.WinRT
                     throw new Exception("Failed to create initial page");
 
             SharingService.Initialize();
+            SearchService.Initialize();
             Window.Current.Activate();
         }
 
